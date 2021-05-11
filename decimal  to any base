@@ -1,0 +1,27 @@
+string give_base(ll val, ll base)
+{
+       
+   string s = to_string(val);
+   ll l = s.sz;
+
+   string fina;
+
+   while(1)
+   {
+        
+       ll x = val%base;
+       if(x>9)
+       {
+          x+=55;
+          fina.pb((char)(x));
+       }
+       
+       else fina.pb((char)(x+48));
+       val/=base;
+       if(val==0) break;
+      
+       
+   }
+   reverse(fina.bg,fina.en);
+   return fina;
+}
